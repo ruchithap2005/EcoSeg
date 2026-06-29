@@ -1,31 +1,39 @@
-♻️ EcoSeg – AI-Based Waste Segregation System
+♻️ EcoSeg AI – AI-Based Waste Segregation System
 
-An intelligent web application that uses Artificial Intelligence (AI) and Machine Learning to automatically classify waste from uploaded images into different categories. The system promotes proper waste disposal, recycling awareness, and sustainable environmental practices.
+An AI-powered web application that automatically classifies waste using image recognition to promote smarter waste management and environmental sustainability.
+
+Developed as a collaborative final-year Bachelor of Computer Applications (BCA) project.
+
+ Team Members
+
+Ruchitha P
+Madhu Sudhan G. A
 
 
-  Project Overview
+ Project Overview
 
-EcoSeg is a smart waste classification system developed using Python Flask, TensorFlow, and Computer Vision. Users can upload an image of waste, and the AI model predicts its category with a confidence score.
+EcoSeg AI is an intelligent waste classification system that uses Artificial Intelligence and Computer Vision to identify different categories of waste from uploaded images.
 
-The application provides a simple and interactive web interface, making waste segregation easier and more accessible.
+The application allows users to securely log in, upload waste images, and receive instant AI-based predictions with confidence scores, helping users segregate waste correctly and encourage sustainable waste disposal practices.
 
-  Features
 
-* 🔐 User Login Interface
-* 📤 Upload Waste Images
+ Features
+
+* 🔐 Secure User Login
+* 🖼️ Waste Image Upload
 * 🤖 AI-Based Waste Classification
-* 📊 Displays Prediction with Confidence Score
-* ♻️ Classifies Waste into:
+* 📊 Prediction Confidence Score
+* 🌱 Classification into:
 
   * Wet Waste
   * Dry Waste
   * Biodegradable Waste
   * Non-Biodegradable Waste
   *  Responsive Web Interface
-  *  Fast Real-Time Prediction
+  *  Fast Prediction using TensorFlow Model
 
 
-  Technologies Used
+Technologies Used
 
  Frontend
 
@@ -38,7 +46,7 @@ The application provides a simple and interactive web interface, making waste se
 * Python
 * Flask
 
-Artificial Intelligence
+ Artificial Intelligence
 
 * TensorFlow
 * Keras
@@ -48,138 +56,140 @@ Artificial Intelligence
 
 * SQLite
 
-Development Tools
+ Development Tools
 
 * Visual Studio Code
-* Git
 * GitHub
 
 
-  AI Workflow
+ System Architecture
 
-1. User logs into the application.
-2. Uploads an image of waste.
-3. Image is preprocessed.
-4. The trained AI model analyzes the image.
-5. Waste category is predicted.
-6. Prediction result and confidence score are displayed.
-
+User
+↓
+Login Authentication
+↓
+Image Upload
+↓
+Image Preprocessing
+↓
+TensorFlow AI Model
+↓
+Waste Classification
+↓
+Prediction Result with Confidence Score
 
  Project Structure
 
-```text
 EcoSeg/
-│── static/
-│── templates/
-│── app.py
-│── train_model.py
-│── model_waste.h5
-│── class_names.json
-│── training_history.json
-│── training_results.png
-│── README.md
-```
+│
+├── static/
+├── templates/
+├── app.py
+├── train_model.py
+├── model_waste.h5
+├── class_names.json
+├── training_history.json
+├── training_results.png
+└── README.md
 
 
- Installation
+How to Run
 
-Clone the Repository
+ 1. Clone the Repository
 
 ```bash
 git clone https://github.com/ruchithap2005/EcoSeg.git
+```
+
+ 2. Open Project
+
+```bash
 cd EcoSeg
 ```
 
-Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate the Virtual Environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-Install Dependencies
+ 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
- Run the Application
+ 4. Run the Application
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit:
+ 5. Open Browser
 
-```text
+```
 http://127.0.0.1:5000
 ```
 
 
- Model Performance
+ Workflow
 
-| Metric                  | Value     |
-| ----------------------- | --------- |
-| Overall Accuracy        | **93.5%** |
-| Wet Waste               | **95%**   |
-| Dry Waste               | **94%**   |
-| Biodegradable Waste     | **93%**   |
-| Non-Biodegradable Waste | **92%**   |
+1. User logs into the application.
+2. Uploads an image of waste.
+3. Image is preprocessed.
+4. TensorFlow model analyzes the image.
+5. Waste category is predicted.
+6. Prediction confidence is displayed.
+7. User can upload another image.
 
 
+ Model Output
 
- Application Screens
+The model predicts one of the following categories:
+
+* Wet Waste
+* Dry Waste
+* Biodegradable Waste
+* Non-Biodegradable Waste
+
+Along with the prediction, the application displays the confidence percentage.
+
+ 
+ Screenshots
+
+The project includes:
 
 * Home Page
 * Login Page
 * Dashboard
-* Waste Image Upload
-* AI Prediction Result
+* Image Upload Interface
+* Prediction Result Page
+
+
+ Applications
+
+* Smart Waste Management
+* Recycling Centers
+* Educational Institutions
+* Smart Cities
+* Environmental Awareness
+* Sustainable Waste Disposal
+
 
  Future Enhancements
 
-* Live Camera Detection
+* Real-time Camera Detection
 * Mobile Application
+* IoT Smart Dustbin Integration
 * Cloud Deployment
-* Larger Training Dataset
-* Improved AI Model Accuracy
-* IoT-Based Smart Dustbin Integration
+* Multi-language Support
+* Higher Accuracy with Larger Datasets
 
-  Project Objectives
+Contribution
 
-* Automate waste segregation using AI.
-* Improve recycling awareness.
-* Reduce manual effort in waste classification.
-* Promote sustainable waste management.
-
- Developed By
+This project was collaboratively designed and developed by:
 
 Ruchitha P
-
-Bachelor of Computer Applications (BCA)
-
-Cambridge College, Bengaluru
+Madhu Sudhan G. A
 
 
-  License
+ License
 
 This project is developed for educational and academic purposes. Feel free to use it for learning and research with proper attribution.
 
 
-  Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
+ If you found this project useful, please consider giving it a Star on GitHub!
