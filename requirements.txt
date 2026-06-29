@@ -6,4 +6,4 @@ tensorflow==2.19.0
 keras==3.10.0
 Pillow==11.3.0
 h5py==3.14.0
-
+gunicorn==23.0.0
