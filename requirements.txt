@@ -1,0 +1,9 @@
+```txt
+Flask==3.1.1
+Werkzeug==3.1.3
+numpy==2.1.3
+tensorflow==2.19.0
+keras==3.10.0
+Pillow==11.3.0
+h5py==3.14.0
+```
