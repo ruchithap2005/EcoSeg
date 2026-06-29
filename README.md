@@ -6,7 +6,7 @@ Developed as a collaborative final-year Bachelor of Computer Applications (BCA) 
 
  Team Members
 
-Ruchitha P
+Ruchitha P and 
 Madhu Sudhan G. A
 
 
@@ -183,7 +183,7 @@ Contribution
 
 This project was collaboratively designed and developed by:
 
-Ruchitha P
+Ruchitha P and
 Madhu Sudhan G. A
 
 
