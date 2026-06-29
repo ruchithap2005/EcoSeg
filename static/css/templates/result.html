@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prediction Result</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background: #e8f5e9;
+    text-align:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    margin:50px auto;
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+img{
+    border-radius:10px;
+    margin-top:20px;
+}
+
+h2{
+color:#2e7d32;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Waste Classification Result</h2>
+
+<img src="{{ url_for('static', filename=image) }}" width="250">
+
+<h3>Prediction: {{prediction}}</h3>
+
+<br>
+
+<a href="/dashboard">
+<button style="padding:10px 20px;background:#2e7d32;color:white;border:none;border-radius:5px;">
+Upload Another Image
+</button>
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - AI Waste System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- jQuery for functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container" style="width: 450px;">
+        <div class="emoji">🤖</div>
+        <h2>AI Waste Classifier</h2>
+        <p>Upload a photo of waste and our AI will tell you how to dispose of it!</p>
+        
+        <!-- File Upload Section -->
+        <div style="border: 2px dashed #4caf50; padding: 20px; border-radius: 10px; background: #f1f8e9;">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button onclick="analyzeWaste()">🔍 Analyze Waste</button>
+        </div>
+
+        <!-- Loading Message -->
+        <div id="loading" style="display:none; color: #2e7d32; margin-top: 15px;">
+            <b>🤔 AI is thinking...</b>
+        </div>
+        
+        <!-- Image Preview -->
+        <img id="preview" src="" alt="Waste Image">
+        
+        <!-- Result Display -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function analyzeWaste() {
+            var input = document.getElementById('imageUpload');
+            
+            // Check if file exists
+            if (!input.files || !input.files[0]) {
+                alert("Please select an image first!");
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('file', input.files[0]);
+
+            // Show loading
+            $('#loading').show();
+            $('#result').hide();
+            $('#preview').hide();
+
+            // Send to AI
+            $.ajax({
+                url: '/predict',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    $('#loading').hide();
+                    
+                    // Show the image
+                    $('#preview').attr('src', response.image_url).show();
+                    
+                    // Show the result
+                    $('#result').show();
+                    
+                    // Choose color based on result
+                    if (response.result.includes("Wet")) {
+                        $('#result').attr('class', 'wet');
+                    } else {
+                        $('#result').attr('class', 'dry');
+                    }
+                    
+                    $('#result').html(
+                        "📋 Result: " + response.result + 
+                        "<br>✅ Accuracy: " + response.confidence
+                    );
+                },
+                error: function() {
+                    $('#loading').hide();
+                    alert("Something went wrong!");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
